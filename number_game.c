@@ -34,8 +34,8 @@ void playGame(int max){
 }
 
 void changeMax(int *max){
-    int x, y = 0;
-    while (y == 0){
+    int x;
+    while (1){
         printf("Enter a new max number: ");
         scanf("%d", &x);
         if (x <= 0){
