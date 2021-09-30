@@ -1,8 +1,10 @@
 /* Restauraunt Bill
 - Declare 4 floats and assign prices for salad, soup, sandwich, and pizza in an array
-- Randomly generate a number between 0-3, which will be the index of the array
-- The user will be asked to enter the to input two integers as percentages, one for tax, and the other for tip
-- Calculate function will calculate the cost of the meal, returning the total bill as a float.
+- Declare float pointer to point at indexes of float array
+- Pointer will randomly generate a number between 0-3, which will then point to the address of array's index
+- The user will be asked to enter the to input two floats as percentages, one for tax, and the other for tip
+- Program calculates tip and tax to be added to total bill
+- Print out details of bill, including meal cost, tax amount, tip amount, and total bill
 */
 
 /* Number Guessing Game
