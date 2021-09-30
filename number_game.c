@@ -34,9 +34,10 @@ void playGame(int max){
 }
 
 void changeMax(int *max){
-    int x, y = 0;
-    while (y == 0){
-        printf("Enter a new max number: ");
+    int x;
+    while (1){
+        printf("Current max number: %d", *max - 1);
+        printf("\nEnter a new max number: ");
         scanf("%d", &x);
         if (x <= 0){
             printf("Enter positive integers only");
@@ -53,8 +54,12 @@ void changeMax(int *max){
 
 void main()
 {
+    FILE *fp;
+    fp = fopen("save.txt","r");
     int max = 11;
     int x = 0;
+    fscanf(fp, "%d", &max);
+    fclose(fp);
     while (x != 3){
         printf("Press 1 to play a game\n");
         printf("Press 2 to play change the max number\n");
@@ -72,4 +77,8 @@ void main()
             break;
         }
     }
+    fp = fopen("save.txt", "w+");
+    fprintf(fp, "%d", max);
+    fclose(fp);
+
 }
