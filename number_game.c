@@ -29,13 +29,26 @@ void playGame(int max){
         if (x == num)
         {
             printf("\nCorrect! You win!\n");
-            break;
         }
     }
 }
 
-void changeMax(){
-
+void changeMax(int *max){
+    int x, y = 0;
+    while (y == 0){
+        printf("Enter a new max number: ");
+        scanf("%d", &x);
+        if (x <= 0){
+            printf("Enter positive integers only");
+        }
+        else if (x > RAND_MAX){
+            printf("Number goes above maximum value");
+        }
+        else {
+            *max = x + 1;
+            break;
+        }
+    }
 }
 
 void main()
@@ -51,7 +64,8 @@ void main()
             playGame(max);
         }
         if (x ==2){
-
+            changeMax(&max);
+            printf("New max number: %d\n", max-1);
         }
         if (x ==3){
             printf("Thank you for playing!");
