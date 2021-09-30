@@ -36,7 +36,8 @@ void playGame(int max){
 void changeMax(int *max){
     int x;
     while (1){
-        printf("Enter a new max number: ");
+        printf("Current max number: %d", *max - 1);
+        printf("\nEnter a new max number: ");
         scanf("%d", &x);
         if (x <= 0){
             printf("Enter positive integers only");
