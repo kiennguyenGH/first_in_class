@@ -8,7 +8,12 @@
 */
 
 /* Number Guessing Game
-- Declare an int x and assign it to a number that != 3
-- Create a while loop that will break if x == 3
-- In the while loop, use int pointer to 
+- Declare an 2 ints and assign one to a number that != 3
+- Assign second int to be 10 (Default max number)
+- Create a while loop that displays menu and will break if int == 3
+- In the while loop, modify 1st int with scanf to select options
+- If 1 selected, call playGame function, which generates a number between 1 - max number
+- User will guess number until correct within while loop; if correct while loop breaks, returning back to menu while loop
+- If 2 selected, user is put into another while loop that prompts the user to input a new max number; While loop will be broken if number is positive and <= RAND_MAX
+- Number will then be set as new max number
 */
