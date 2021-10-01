@@ -6,11 +6,11 @@ void playGame(int max){
     int num, x = 0;
     time_t t;
     srand((unsigned) time(&t));
-    num = rand() % max;
+    num = 1 + (rand() % max);
     char quit;
     while (x != num)
     {
-        printf("Enter a number between 1-%d (Enter q to quit): ", max - 1);
+        printf("Enter a number between 1-%d (Enter q to quit): ", max);
         scanf("%d", &x);
         quit = getchar();
         if (quit == 'q')
@@ -36,7 +36,7 @@ void playGame(int max){
 void changeMax(int *max){
     int x;
     while (1){
-        printf("Current max number: %d", *max - 1);
+        printf("Current max number: %d", *max);
         printf("\nEnter a new max number: ");
         scanf("%d", &x);
         if (x <= 0){
@@ -46,7 +46,7 @@ void changeMax(int *max){
             printf("Number goes above maximum value");
         }
         else {
-            *max = x + 1;
+            *max = x;
             break;
         }
     }
@@ -56,7 +56,7 @@ void main()
 {
     FILE *fp;
     fp = fopen("save.txt","r");
-    int max = 11;
+    int max = 10;
     int x = 0;
     fscanf(fp, "%d", &max);
     fclose(fp);
@@ -70,7 +70,7 @@ void main()
         }
         if (x ==2){
             changeMax(&max);
-            printf("New max number: %d\n", max-1);
+            printf("New max number: %d\n", max);
         }
         if (x ==3){
             printf("Thank you for playing!");
